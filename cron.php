@@ -16,5 +16,5 @@ $query = Database::getInstance()->prepare('INSERT INTO contents SET text = ?');
 $query->execute([$newContent]);
 
 if ($percent < 90) {
-    Mailer::send($percent);
+    Mailer::send($percent,false);
 }

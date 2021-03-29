@@ -3,7 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 
 class Mailer {
-    public static function send($percent) {
+    public static function send($percent, $isCheck) {
         try {
             // Create the SMTP Transport
             $transport = (new Swift_SmtpTransport('smtp.mailtrap.io', 2525))
@@ -27,7 +27,11 @@ class Mailer {
             $message->addTo('gojas90@gmail.com','goja');
 
             // Set the plain-text "Body"
-            $message->setBody("PROMENA {$percent}%");
+            $body = 'PROVERA';
+            if (!$isCheck) {
+                $body = "PROMENA {$percent}%";
+            }
+            $message->setBody($body);
 
             // Send the message
             $result = $mailer->send($message);
