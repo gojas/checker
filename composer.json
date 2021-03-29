@@ -1,0 +1,11 @@
+{
+    "require": {
+        "caxy/php-htmldiff": "^0.1.11",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "cron/cron": "^1.5",
+        "swiftmailer/swiftmailer": "^6.0",
+        "symfony/dom-crawler": "^5.2",
+        "symfony/css-selector": "^5.2"
+    }
+}
